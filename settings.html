@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Linkly Settings</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#3B82F6",
+                dark: "#6366F1",
+              },
+              background: {
+                light: "#F9FAFB",
+                dark: "#111827",
+              },
+              card: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              surface: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              text: {
+                light: "#1F2937",
+                dark: "#F9FAFB",
+              },
+              "text-secondary": {
+                light: "#6B7280",
+                dark: "#9CA3AF",
+              },
+              border: {
+                light: "#E5E7EB",
+                dark: "#374151",
+              },
+              accent: {
+                green: "#10B981",
+                red: "#EF4444",
+              },
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+              "soft-dark":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div
+          class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5"
+        >
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+          >
+            <header
+              class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 py-3"
+            >
+              <div
+                class="flex items-center gap-4 text-text-light dark:text-text-dark"
+              >
+                <!-- <div class="size-6">
+                  <svg
+                    fill="none"
+                    viewbox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 6H42L36 24L42 42H6L12 24L6 6Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div> -->
+                <!-- <h2
+                  class="text-text-light dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Linkly
+                </h2> -->
+            <span
+              class="material-symbols-outlined text-primary-light dark:text-primary-dark text-4xl"
+              >link</span
+            >
+                          <h1 class="text-2xl font-bold">Linkly</h1>  
+            
+            </div>
+              <div class="flex flex-1 justify-end gap-4">
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-surface-light dark:bg-surface-dark/80 text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+                >
+                  <span
+                    class="material-symbols-outlined text-text-light dark:text-text-dark"
+                    >arrow_back</span
+                  >
+                </button>
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  data-alt="User profile picture"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaWQikqh5svA7Gt1EBaw-IMlOWz3YLC__tk6FdwtEBMHoI1ZZBZDYyXiVXCbtyw0jyHpn6zVEL8QaLsQTLxHbCm-Cf75ztvXF_5ja-q1pjqmiL9-qEduFRojwIDigiHAJl_f-bsuUDJ1ShPFI4DTcvX5ZH0ndJaMDNIRNY8pfOOp4QNjqSoUBFOdMg_XCogYK0X8X3y7KBdAQCiergPkv0YCcpbSeKg3PsPaahbT_Y2s6_UtCUE2ee0iMTL9m3c3-U5i3VwPNYa0bm');
+                  "
+                ></div>
+              </div>
+            </header>
+            <div
+              class="flex flex-wrap justify-between items-center gap-3 p-4 sm:p-6"
+            >
+              <p
+                class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] min-w-72"
+              >
+                Settings
+              </p>
+              <div
+                class="flex items-center gap-4 p-2 rounded-lg bg-surface-light dark:bg-surface-dark"
+              >
+                <span
+                  class="material-symbols-outlined text-text-secondary-light dark:text-accent-green"
+                  >light_mode</span
+                >
+                <div
+                  class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in"
+                >
+                  <input
+                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                    id="toggle"
+                    name="toggle"
+                    type="checkbox"
+                  />
+                  <label
+                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                    for="toggle"
+                  ></label>
+                </div>
+                <span
+                  class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark"
+                  >dark_mode</span
+                >
+              </div>
+            </div>
+            <div class="pb-3">
+              <div
+                class="flex border-b border-border-light dark:border-border-dark px-4 sm:px-6 gap-8"
+              >
+                <a
+                  class="flex flex-col items-center justify-center border-b-[3px] border-b-primary-light dark:border-b-primary-dark text-primary-light dark:text-primary-dark pb-[13px] pt-4"
+                  href="#"
+                >
+                  <p
+                    class="text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                    Account
+                  </p>
+                </a>
+                <a
+                  class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4"
+                  href="#"
+                >
+                  <p
+                    class="text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                    Privacy
+                  </p>
+                </a>
+                <a
+                  class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4"
+                  href="#"
+                >
+                  <p
+                    class="text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                    Appearance
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 sm:p-6 space-y-8">
+              <section>
+                <h2
+                  class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5"
+                >
+                  Profile Information
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="flex flex-col gap-4">
+                    <label class="flex flex-col w-full">
+                      <p
+                        class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                      >
+                        Name
+                      </p>
+                      <input
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-card-dark focus:border-primary-light dark:focus:border-primary-dark h-14 placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-[15px] text-base font-normal leading-normal"
+                        value="John Doe"
+                      />
+                    </label>
+                    <label class="flex flex-col w-full">
+                      <p
+                        class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                      >
+                        Username
+                      </p>
+                      <input
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-white focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-gray-800 focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal"
+                        value="johndoe"
+                      />
+                    </label>
+                  </div>
+                  <div class="flex flex-col items-center justify-center gap-4">
+                    <div
+                      class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 border-4 border-border-light dark:border-border-dark"
+                      data-alt="User profile picture"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZuqF2Vb2DlWqWN7pmKgLc_aas22NDbVLzupZgsL-Vmmzj_B_sCXxQEZWxX_q5z-j4gov2swZwDMLjLPWWEHn426XrVNOqvH28UCzI-WK2_Fp8IPgc6pLDM8T7nsv1B3E7zwPBxs2zCxbJZcpceDfcofvtkjrP3V9kyVjL4Bxawt-sQVQQvViaymXA6N48zu_7kqw0fQH07R8QZ7xoRTkatM5V5NV9jej-mhW0LHA846e_yLD2JWIDqhdZ7yjYoYvRBaGJk4eav6xu');
+                      "
+                    ></div>
+                    <button
+                      class="flex items-center justify-center rounded-lg h-10 bg-surface-light dark:bg-surface-dark/80 text-text-light dark:text-text-dark text-sm font-bold px-4"
+                    >
+                      Change Picture
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <label class="flex flex-col w-full">
+                    <p
+                      class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                    >
+                      Email Address
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-card-dark focus:border-primary-light dark:focus:border-primary-dark h-14 placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-[15px] text-base font-normal leading-normal"
+                      value="john.doe@example.com"
+                    />
+                  </label>
+                </div>
+              </section>
+              <div
+                class="w-full border-t border-border-light dark:border-border-dark"
+              ></div>
+              <section>
+                <h2
+                  class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3"
+                >
+                  Change Password
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <label class="flex flex-col w-full">
+                    <p
+                      class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                    >
+                      Current Password
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-white focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-gray-800 focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal"
+                      type="password"
+                    />
+                  </label>
+                  <label class="flex flex-col w-full">
+                    <p
+                      class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                    >
+                      New Password
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-white focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-gray-800 focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal"
+                      type="password"
+                    />
+                  </label>
+                </div>
+              </section>
+              <div
+                class="w-full border-t border-border-light dark:border-border-dark"
+              ></div>
+              <section class="border border-red-500/50 rounded-lg p-4">
+                <h2
+                  class="text-red-500 text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3"
+                >
+                  Danger Zone
+                </h2>
+                <p class="text-text-light dark:text-text-dark pb-4">
+                  Deleting your account is a permanent action and cannot be
+                  undone.
+                </p>
+                <button
+                  class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg"
+                >
+                  Delete Account
+                </button>
+              </section>
+              <div class="flex justify-end gap-4 mt-8">
+                <button
+                  class="flex items-center justify-center rounded-lg h-12 bg-surface-light dark:bg-surface-dark/80 text-text-light dark:text-text-dark text-base font-bold px-6"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="flex items-center justify-center rounded-lg h-12 bg-primary-light dark:bg-primary-dark hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 text-white text-base font-bold px-6"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

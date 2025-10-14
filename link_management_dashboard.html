@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Linkly - Your Links</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#3B82F6",
+                dark: "#6366F1",
+              },
+              background: {
+                light: "#F9FAFB",
+                dark: "#111827",
+              },
+              card: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              surface: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              text: {
+                light: "#1F2937",
+                dark: "#F9FAFB",
+              },
+              "text-secondary": {
+                light: "#6B7280",
+                dark: "#9CA3AF",
+              },
+              border: {
+                light: "#E5E7EB",
+                dark: "#374151",
+              },
+              accent: {
+                green: "#10B981",
+                red: "#EF4444",
+              },
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+              "soft-dark":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+          >
+            <header
+              class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 md:px-10 py-4"
+            >
+              <div
+                class="flex items-center gap-3 text-text-light dark:text-text-dark"
+              >
+                <!-- <div class="text-primary-light dark:text-primary-dark">
+                  <svg
+                    class="w-8 h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                  
+                    <path
+                      d="M10.59 13.41C10.21 13.79 10 14.3 10 14.83V21L12 19L14 21V14.83C14 14.3 13.79 13.79 13.41 13.41L12 12L10.59 13.41ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div> -->
+                <!-- <div class="size-8 text-primary-light dark:text-primary-dark">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                  </svg>
+                </div>
+                <h1 class="text-2xl font-bold">Linkly</h1> -->
+                          <span class="material-symbols-outlined text-primary-light text-4xl dark:text-primary-dark">link</span>
+                          <h1 class="text-2xl font-bold">Linkly</h1>
+              </div>
+              <!-- <div class="flex gap-2">
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-background-light dark:bg-card-dark text-subtext-light dark:text-subtext-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors"
+                >
+                  <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-background-light dark:bg-card-dark text-subtext-light dark:text-subtext-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors"
+                >
+                  <span class="material-symbols-outlined">person</span>
+                </button>
+              </div> -->
+           <div class="flex items-center gap-4">
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-300 dark:hover:bg-gray-600"
+                  onclick="document.documentElement.classList.toggle('dark')"
+                >
+                  <span class="material-symbols-outlined dark:hidden"
+                    >dark_mode</span
+                  >
+                  <span class="material-symbols-outlined hidden dark:inline"
+                    >light_mode</span
+                  >
+                </button>
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  data-alt="User profile picture"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBH_lsnnhzsCWge9buZ-1CLXvFFl59Zo21G292fZRAFQYqhhemXAtFaIZEnULaAQ_JSLTi2x95sCvwYNFnIp24pN-7BeK2s2eY1c4njwCdqmj-MOexLP7RkZgpDX2HQcHKOPqWTQLHpuFGUbaUn35x7f9y-vU1AaKGf7n4_vuQCXLSGDxLMwdUq0xlbLscE2ZRPP46FCzA2aZ0ym8g5jxm_BePxMGcg_cQWjEArLT5sw-U_6MW6ns5FeAHLv96H6_BxCHr41FEHi0Bv');
+                  "
+                ></div>
+              </div>
+            </header>
+            <main class="flex-grow p-4 sm:p-6 md:p-10">
+              <div
+                class="flex flex-wrap justify-between items-center gap-4 mb-8"
+              >
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                  Your Links
+                </h2>
+                <button
+                  class="flex items-center justify-center gap-2 h-11 px-5 bg-primary-light dark:bg-primary-dark text-white dark:text-background-dark text-sm font-semibold rounded-lg shadow-sm hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 transition-colors"
+                >
+                  <span class="material-symbols-outlined">add</span>
+                  <span>Add New Link</span>
+                </button>
+              </div>
+              <div class="space-y-4">
+                <div
+                  class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 rounded-lg border border-border-light dark:border-border-dark hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark cursor-move"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >drag_indicator</span
+                    >
+                  </div>
+                  <img
+                    alt="Portfolio Favicon"
+                    class="size-10 rounded-md"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ_jeyWY7JKllhESWpXcFURPe5G8H0iMPcBQd0kGvTykwrAktNurdFMVl_bBQkMlW1QYQPEJqRp2qt_ZCWWlpt8XjoD3-2TvT2Z-L8sOby0VosgYfW6s2Hy_F40_XKOY3WCSqRbmfoc5Brg3TzpHxgIj073JH3SvMVsz2hs5byyFNinlGVBAB-Bl0e5fxM9Mu-HZKbUf_s9J3RGXpzqnnEAEy2jHvbVBCfpx4Fxgj8zdg8MLYvuhjgA4cZ2E8LhHwa2XdE1BAgUfCt"
+                  />
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-base text-text-light dark:text-text-dark"
+                    >
+                      My Portfolio
+                    </p>
+                    <p
+                      class="text-sm text-text-secondary-light dark:text-text-secondary-dark"
+                    >
+                      https://www.myportfolio.com
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >edit</span
+                      >
+                    </button>
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-red-500 dark:hover:text-red-400 flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >delete</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 rounded-lg border border-border-light dark:border-border-dark hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark cursor-move"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >drag_indicator</span
+                    >
+                  </div>
+                  <img
+                    alt="LinkedIn Favicon"
+                    class="size-10 rounded-md"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8tY6WaXLl8-T1Z9Y6Br58k7aP-uivSxtphjuB80GSvCCf52ctZbVycd7K49-3yWgdpTkEvgLKNkZNEbPV4uGBgaB426-1JsljJiFPyE62y0mozlWB9A2czQ2zfzezH9wbH89HmE01QbRybJ18eQTW25Vvhz0lNH2V4XbX0hC4eEYlEKitIkDKxnLyAF-7oRM02nuHYBeY1LO2FwQ_9XVH0Y3niV7KgdeIbAIcRgAX7oqYGNnn7vLPbzHe3x-2q3S4kuWog6V8PRje"
+                  />
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-base text-text-light dark:text-text-dark"
+                    >
+                      LinkedIn Profile
+                    </p>
+                    <p
+                      class="text-sm text-text-secondary-light dark:text-text-secondary-dark"
+                    >
+                      https://www.linkedin.com/in/myprofile
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >edit</span
+                      >
+                    </button>
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-red-500 dark:hover:text-red-400 flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >delete</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 rounded-lg border border-border-light dark:border-border-dark hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark cursor-move"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >drag_indicator</span
+                    >
+                  </div>
+                  <img
+                    alt="Twitter Favicon"
+                    class="size-10 rounded-md"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUI6bAvVe_w_akIvfjID6vBGFVKb8KQVeFCX52o4ZcXo6pwYACuvJ0wdmOMjmzNZ5dbSKIXhTy6e-jLbtOsatzcbTpg9b-M84jhFjtSkVoiV8ZN_dJXJ8OO7N5DdGQehU5oMyZ1EUWSkj54_xqdTNdvvP3LAdoovDonHF6yf1nIE7vt_6xw5Vttna8bmnY_FP1aWIeEQ1O5Xzj4zbOOiFmeak8gpY9oL815D34B5TPDIbAe3LOaKEO-NpXBVfFA-mLoSUpUrbXXGfn"
+                  />
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-base text-text-light dark:text-text-dark"
+                    >
+                      Twitter
+                    </p>
+                    <p
+                      class="text-sm text-text-secondary-light dark:text-text-secondary-dark"
+                    >
+                      https://www.twitter.com/myprofile
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >edit</span
+                      >
+                    </button>
+                    <button
+                      class="text-text-secondary-light dark:text-text-secondary-dark hover:text-red-500 dark:hover:text-red-400 flex size-9 items-center justify-center transition-colors rounded-full hover:bg-border-light dark:hover:bg-border-dark"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >delete</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="text-center py-20 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl mt-10 flex flex-col items-center"
+                >
+                  <div
+                    class="flex items-center justify-center size-16 bg-background-light dark:bg-card-dark rounded-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-4xl text-text-secondary-light dark:text-text-secondary-dark"
+                      >link_off</span
+                    >
+                  </div>
+                  <h3
+                    class="mt-4 text-lg font-semibold text-text-light dark:text-text-dark"
+                  >
+                    No links yet
+                  </h3>
+                  <p
+                    class="mt-1 text-sm text-text-secondary-light dark:text-text-secondary-dark"
+                  >
+                    Add your first link to get started!
+                  </p>
+                  <button
+                    class="mt-6 flex items-center justify-center gap-2 h-11 px-5 bg-primary-light dark:bg-primary-dark text-white dark:text-background-dark text-sm font-semibold rounded-lg shadow-sm hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 transition-colors"
+                  >
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Add Your First Link</span>
+                  </button>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

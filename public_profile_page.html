@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Linkly</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#3B82F6",
+                dark: "#6366F1",
+              },
+              background: {
+                light: "#F9FAFB",
+                dark: "#111827",
+              },
+              card: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              surface: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              text: {
+                light: "#1F2937",
+                dark: "#F9FAFB",
+              },
+              "text-secondary": {
+                light: "#6B7280",
+                dark: "#9CA3AF",
+              },
+              border: {
+                light: "#E5E7EB",
+                dark: "#374151",
+              },
+              accent: {
+                green: "#10B981",
+                red: "#EF4444",
+              },
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              lg: "1rem",
+              xl: "1.25rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+              "soft-dark":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark transition-colors duration-300"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="absolute top-6 right-6 z-10">
+        <button
+          class="p-2 rounded-full bg-card-light/50 dark:bg-card-dark/50 text-text-light dark:text-text-dark backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+          id="theme-toggle"
+        >
+          <span class="material-symbols-outlined block dark:hidden"
+            >dark_mode</span
+          >
+          <span class="material-symbols-outlined hidden dark:block"
+            >light_mode</span
+          >
+        </button>
+      </div>
+      <div class="layout-container flex h-full grow flex-col">
+        <div
+          class="px-4 sm:px-6 md:px-8 lg:px-10 flex flex-1 justify-center py-10 sm:py-16 md:py-20"
+        >
+          <div
+            class="layout-content-container flex flex-col w-full max-w-2xl flex-1 gap-10"
+          >
+            <div class="flex p-4 @container">
+              <div class="flex w-full flex-col gap-4 items-center">
+                <div class="flex gap-5 flex-col items-center">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 shadow-lg"
+                    data-alt="Profile picture of Jane Smith"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBy4FxofmksZHnyGzEUcTNzRP_jhhrUd5fgDekOdNbdc7GBcQHjvvghWP_-Xr6dlNblbHpqfp7k3ulTjXf0tpv6FCVKJdXJwuW4O7kLoyx_gT3LEISZjmYpy3JV2sghsT5Qtomvy9riip7d0kmLtOoDhL4IV13wDiSSt74zXm9M1wRHmQN7KYDElj_Kaxm3MK7VXNPAdWZ8ua3ZKPXPutSjNhT-GJ6IdGORvU5EiIPpxuWHgeDt-DIk-ItltQisafa-dhG00IM6YtB0');
+                    "
+                  ></div>
+                  <div class="flex flex-col items-center justify-center">
+                    <p
+                      class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-tight text-center"
+                    >
+                      @janesmith
+                    </p>
+                    <p
+                      class="text-text-secondary-light dark:text-text-secondary-dark text-lg font-normal leading-normal text-center max-w-md mt-2"
+                    >
+                      Digital creator and tech enthusiast. Here are my important
+                      links!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 px-4 w-full">
+              <a
+                class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-16 rounded-lg shadow-soft dark:shadow-soft-dark hover:shadow-lg dark:hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                href="#"
+              >
+                <div
+                  class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined">work</span>
+                </div>
+                <p
+                  class="text-text-light dark:text-text-dark text-base font-medium leading-normal flex-1 truncate"
+                >
+                  My Portfolio
+                </p>
+                <div class="shrink-0">
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark flex size-7 items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-16 rounded-lg shadow-soft dark:shadow-soft-dark hover:shadow-lg dark:hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                href="#"
+              >
+                <div
+                  class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  class="text-text-light dark:text-text-dark text-base font-medium leading-normal flex-1 truncate"
+                >
+                  Follow me on X (Twitter)
+                </p>
+                <div class="shrink-0">
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark flex size-7 items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-16 rounded-lg shadow-soft dark:shadow-soft-dark hover:shadow-lg dark:hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                href="#"
+              >
+                <div
+                  class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.505 2.505 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 8.819v6.362z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  class="text-text-light dark:text-text-dark text-base font-medium leading-normal flex-1 truncate"
+                >
+                  Subscribe on YouTube
+                </p>
+                <div class="shrink-0">
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark flex size-7 items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                </div>
+              </a>
+              <a
+                class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-16 rounded-lg shadow-soft dark:shadow-soft-dark hover:shadow-lg dark:hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                href="#"
+              >
+                <div
+                  class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined">article</span>
+                </div>
+                <p
+                  class="text-text-light dark:text-text-dark text-base font-medium leading-normal flex-1 truncate"
+                >
+                  Read my latest blog post
+                </p>
+                <div class="shrink-0">
+                  <div
+                    class="text-text-secondary-light dark:text-text-secondary-dark flex size-7 items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <footer class="mt-8 text-center">
+              <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                Powered by
+                <a
+                  class="font-bold text-primary-light dark:text-primary-dark hover:underline"
+                  href="#"
+                  >Linkly</a
+                >
+              </p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+      // Check for saved theme in localStorage
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+      } else {
+        htmlElement.classList.remove("dark");
+      }
+      themeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+        // Save theme preference to localStorage
+        if (htmlElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+  </body>
+</html>

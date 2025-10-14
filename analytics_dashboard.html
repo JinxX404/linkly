@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Linkly Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#3B82F6",
+                dark: "#6366F1",
+              },
+              background: {
+                light: "#F9FAFB",
+                dark: "#111827",
+              },
+              card: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              surface: {
+                light: "#FFFFFF",
+                dark: "#1F2937",
+              },
+              text: {
+                light: "#1F2937",
+                dark: "#F9FAFB",
+              },
+              "text-secondary": {
+                light: "#6B7280",
+                dark: "#9CA3AF",
+              },
+              border: {
+                light: "#E5E7EB",
+                dark: "#374151",
+              },
+              accent: {
+                green: "#10B981",
+                red: "#EF4444",
+              },
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+              "soft-dark":
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col max-w-6xl flex-1 px-4"
+          >
+            <header
+              class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-6 py-4"
+            >
+              <div
+                class="flex items-center gap-4 text-gray-800 dark:text-white"
+              >
+                <!-- <div class="size-8 text-primary-light dark:text-primary-dark">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                  </svg>
+                </div>
+                <h2 class="text-2xl font-bold tracking-[-0.015em]">Linkly</h2> -->
+              <span class="material-symbols-outlined text-primary-light text-4xl">link</span>
+                          <h1 class="text-2xl font-bold">Linkly</h1>
+              </div>
+              <div class="hidden md:flex items-center gap-9">
+                <a
+                  class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark text-sm font-medium"
+                  href="#"
+                  >Dashboard</a
+                >
+                <a
+                  class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark text-sm font-medium"
+                  href="link_management_dashboard.html"
+                  >Links</a
+                >
+                <a
+                  class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary-light dark:hover:text-primary-dark text-sm font-medium"
+                  href="#"
+                  >Settings</a
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-300 dark:hover:bg-gray-600"
+                  onclick="document.documentElement.classList.toggle('dark')"
+                >
+                  <span class="material-symbols-outlined dark:hidden"
+                    >dark_mode</span
+                  >
+                  <span class="material-symbols-outlined hidden dark:inline"
+                    >light_mode</span
+                  >
+                </button>
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  data-alt="User profile picture"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBH_lsnnhzsCWge9buZ-1CLXvFFl59Zo21G292fZRAFQYqhhemXAtFaIZEnULaAQ_JSLTi2x95sCvwYNFnIp24pN-7BeK2s2eY1c4njwCdqmj-MOexLP7RkZgpDX2HQcHKOPqWTQLHpuFGUbaUn35x7f9y-vU1AaKGf7n4_vuQCXLSGDxLMwdUq0xlbLscE2ZRPP46FCzA2aZ0ym8g5jxm_BePxMGcg_cQWjEArLT5sw-U_6MW6ns5FeAHLv96H6_BxCHr41FEHi0Bv');
+                  "
+                ></div>
+              </div>
+            </header>
+            <main class="flex-1 py-10">
+              <div
+                class="flex flex-wrap justify-between items-center gap-4 mb-8"
+              >
+                <h1
+                  class="text-gray-900 dark:text-white text-4xl font-extrabold tracking-tight"
+                >
+                  Analytics Dashboard
+                </h1>
+                <div class="flex gap-2 overflow-x-auto pb-2">
+                  <button
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Last 7 days
+                  </button>
+                  <button
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Last 30 days
+                  </button>
+                  <button
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    Last 90 days
+                  </button>
+                  <button
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark pl-4 pr-3 text-sm font-medium text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    <span>Custom range</span>
+                    <span class="material-symbols-outlined text-base"
+                      >expand_more</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <p
+                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-medium"
+                  >
+                    Total Clicks
+                  </p>
+                  <p
+                    class="text-text-light dark:text-text-dark text-4xl font-bold"
+                  >
+                    1,423
+                  </p>
+                  <p class="text-accent-green text-base font-medium">+12.5%</p>
+                </div>
+                <div
+                  class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <p
+                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-medium"
+                  >
+                    Total Views
+                  </p>
+                  <p
+                    class="text-text-light dark:text-text-dark text-4xl font-bold"
+                  >
+                    8,923
+                  </p>
+                  <p class="text-accent-green text-base font-medium">+5.2%</p>
+                </div>
+                <div
+                  class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <p
+                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-medium"
+                  >
+                    Click-Through Rate
+                  </p>
+                  <p
+                    class="text-text-light dark:text-text-dark text-4xl font-bold"
+                  >
+                    16%
+                  </p>
+                  <p class="text-accent-red text-base font-medium">-2.1%</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div
+                  class="lg:col-span-2 p-6 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <p
+                    class="text-lg font-bold text-text-light dark:text-text-dark"
+                  >
+                    Clicks Over Time
+                  </p>
+                  <div class="flex min-h-[300px] flex-1 flex-col gap-8 py-4">
+                    <svg
+                      fill="none"
+                      height="100%"
+                      preserveAspectRatio="none"
+                      viewBox="-3 0 478 150"
+                      width="100%"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="dark:hidden"
+                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
+                        fill="url(#paint0_linear_chart_light)"
+                      ></path>
+                      <path
+                        class="dark:hidden"
+                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                        stroke="#4F46E5"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></path>
+                      <path
+                        class="hidden dark:block"
+                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
+                        fill="url(#paint0_linear_chart_dark)"
+                      ></path>
+                      <path
+                        class="hidden dark:block"
+                        d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                        stroke="#818CF8"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></path>
+                      <defs>
+                        <linearGradient
+                          gradientUnits="userSpaceOnUse"
+                          id="paint0_linear_chart_light"
+                          x1="236"
+                          x2="236"
+                          y1="1"
+                          y2="149"
+                        >
+                          <stop stop-color="#4F46E5" stop-opacity="0.3"></stop>
+                          <stop
+                            offset="1"
+                            stop-color="#4F46E5"
+                            stop-opacity="0"
+                          ></stop>
+                        </linearGradient>
+                        <linearGradient
+                          gradientUnits="userSpaceOnUse"
+                          id="paint0_linear_chart_dark"
+                          x1="236"
+                          x2="236"
+                          y1="1"
+                          y2="149"
+                        >
+                          <stop stop-color="#818CF8" stop-opacity="0.3"></stop>
+                          <stop
+                            offset="1"
+                            stop-color="#818CF8"
+                            stop-opacity="0"
+                          ></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div
+                      class="flex justify-between text-xs text-text-secondary-light dark:text-text-secondary-dark"
+                    >
+                      <p>Day 1</p>
+                      <p>Day 5</p>
+                      <p>Day 10</p>
+                      <p>Day 15</p>
+                      <p>Day 20</p>
+                      <p>Day 25</p>
+                      <p>Day 30</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <h3
+                    class="text-lg font-bold text-text-light dark:text-text-dark mb-4"
+                  >
+                    Top Performing Links
+                  </h3>
+                  <div class="space-y-6">
+                    <div class="flex flex-col gap-2">
+                      <div class="flex justify-between items-center text-sm">
+                        <span
+                          class="font-medium text-text-secondary-light dark:text-text-secondary-dark"
+                          >/my-portfolio</span
+                        >
+                        <span
+                          class="font-semibold text-text-light dark:text-text-dark"
+                          >320</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"
+                      >
+                        <div
+                          class="bg-primary-light dark:bg-primary-dark h-2.5 rounded-full"
+                          style="width: 80%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <div class="flex justify-between items-center text-sm">
+                        <span
+                          class="font-medium text-text-secondary-light dark:text-text-secondary-dark"
+                          >/blog-post</span
+                        >
+                        <span
+                          class="font-semibold text-text-light dark:text-text-dark"
+                          >215</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"
+                      >
+                        <div
+                          class="bg-primary-light dark:bg-primary-dark h-2.5 rounded-full"
+                          style="width: 65%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <div class="flex justify-between items-center text-sm">
+                        <span
+                          class="font-medium text-text-secondary-light dark:text-text-secondary-dark"
+                          >/github</span
+                        >
+                        <span
+                          class="font-semibold text-text-light dark:text-text-dark"
+                          >180</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"
+                      >
+                        <div
+                          class="bg-primary-light dark:bg-primary-dark h-2.5 rounded-full"
+                          style="width: 50%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <div class="flex justify-between items-center text-sm">
+                        <span
+                          class="font-medium text-text-secondary-light dark:text-text-secondary-dark"
+                          >/twitter</span
+                        >
+                        <span
+                          class="font-semibold text-text-light dark:text-text-dark"
+                          >95</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"
+                      >
+                        <div
+                          class="bg-primary-light dark:bg-primary-dark h-2.5 rounded-full"
+                          style="width: 30%"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <div
+                  class="p-6 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <h3
+                    class="text-lg font-bold text-text-light dark:text-text-dark mb-4"
+                  >
+                    Audience by Location
+                  </h3>
+                  <div class="flex items-center justify-center min-h-[250px]">
+                    <img
+                      class="h-auto w-full max-w-lg hidden dark:block"
+                      data-alt="World map visualization with dots representing audience locations"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_pRhXhmlek8IoZy2vpsWXXRcwE2XcqGMDKWALVN5ELoTqowbpKdqC4rrW8EXU2m1xZBQ-07d9y4YzFcI2_xuPGVRArdtWoFhZWlsNtUSXyKVysr7sDlAPVjuPZbH9GDfPxJ6zeNomqTBK9K9fvnH0sBL2l0_4davTVlDGclwDDSZmKTPbP0L_Cb9mpKU70NXjnC4IlhCvnbfz1KBRnAGjhMeeq2nvEFMjYmGw8kb_hgp63ZSGxDKWVH2z1hgeLEmgPhIqmcxilGkn"
+                    />
+                    <img
+                      class="h-auto w-full max-w-lg dark:hidden"
+                      data-alt="World map visualization with dots representing audience locations"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuABkmCmTGPHn27Z7n84Me9eB2HKyKTOucvnvT1EBwq1QXyZ4uDbmsOjDNasPmyDhIDN4HZUydeD747Bb0nHnKy3BIRbyD-qnkFITowXMInYy7QXDOxwZzCb0tuDL6GIp3inQHhUawxaNkN_C3Vp0p-dR91wl_wLm_nA1qgN0p8cVQ1YIE6Iexdhtc6Xfrq0GeAV9pre3Kin93T3kg0WMqY_IcB94SP9s40Hr-Iss77q8UAWKSTVQ3FPNLgEzgbwT0E8LT6wqxyQJ0cY"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="p-6 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm"
+                >
+                  <h3
+                    class="text-lg font-bold text-text-light dark:text-text-dark mb-4"
+                  >
+                    Top Referrers
+                  </h3>
+                  <div class="overflow-x-auto">
+                    <table
+                      class="w-full text-sm text-left text-text-secondary-light dark:text-text-secondary-dark"
+                    >
+                      <thead
+                        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700/50 dark:text-gray-400"
+                      >
+                        <tr>
+                          <th class="px-6 py-3 rounded-l-lg" scope="col">
+                            Source
+                          </th>
+                          <th class="px-6 py-3 rounded-r-lg" scope="col">
+                            Clicks
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr
+                          class="bg-card-light dark:bg-card-dark border-b dark:border-border-dark"
+                        >
+                          <th
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            scope="row"
+                          >
+                            Twitter.com
+                          </th>
+                          <td class="px-6 py-4">482</td>
+                        </tr>
+                        <tr
+                          class="bg-card-light dark:bg-card-dark border-b dark:border-border-dark"
+                        >
+                          <th
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            scope="row"
+                          >
+                            Github.com
+                          </th>
+                          <td class="px-6 py-4">310</td>
+                        </tr>
+                        <tr
+                          class="bg-card-light dark:bg-card-dark border-b dark:border-border-dark"
+                        >
+                          <th
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            scope="row"
+                          >
+                            LinkedIn.com
+                          </th>
+                          <td class="px-6 py-4">250</td>
+                        </tr>
+                        <tr class="bg-card-light dark:bg-card-dark">
+                          <th
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            scope="row"
+                          >
+                            Direct
+                          </th>
+                          <td class="px-6 py-4">155</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
