@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -75,6 +75,8 @@
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       }
     </style>
+    <!-- Theme Toggle Script - Load before body to prevent flash -->
+    <script src="js files/theme_toggle.js"></script>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark transition-colors duration-300"
@@ -86,6 +88,8 @@
         <button
           class="p-2 rounded-full bg-card-light/50 dark:bg-card-dark/50 text-text-light dark:text-text-dark backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
           id="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
         >
           <span class="material-symbols-outlined block dark:hidden"
             >dark_mode</span
@@ -252,28 +256,5 @@
         </div>
       </div>
     </div>
-    <script>
-      const themeToggle = document.getElementById("theme-toggle");
-      const htmlElement = document.documentElement;
-      // Check for saved theme in localStorage
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        htmlElement.classList.add("dark");
-      } else {
-        htmlElement.classList.remove("dark");
-      }
-      themeToggle.addEventListener("click", () => {
-        htmlElement.classList.toggle("dark");
-        // Save theme preference to localStorage
-        if (htmlElement.classList.contains("dark")) {
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
-      });
-    </script>
   </body>
 </html>

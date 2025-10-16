@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -76,6 +76,8 @@
         font-size: 20px;
       }
     </style>
+    <!-- Theme Toggle Script - Load before body to prevent flash -->
+    <script src="js files/theme_toggle.js"></script>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display antialiased"
@@ -142,15 +144,17 @@
                 >Sign In</a
               >
               </button>
-              <button
+              <button>
+                <a
                 class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary-light dark:bg-primary-dark text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity"
-                >
-                <!-- <span class="truncate">Sign Up</span> -->
-                 <a href="signup.html">Sign Up</a>
+                href="signup.html"
+                >Sign Up</a
+              >
               </button>
               <button
                   class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-300 dark:hover:bg-gray-600"
-                  onclick="document.documentElement.classList.toggle('dark')"
+                  onclick="toggleTheme()"
+                  aria-label="Toggle theme"
                 >
                   <span class="material-symbols-outlined dark:hidden"
                     >dark_mode</span
@@ -183,7 +187,7 @@
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary-light dark:bg-primary-dark text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity"
               >
-                <a href="signup.html"> <span class="truncate">Create Your Linkly</span></a>
+                <a href="signup.html">Create Your Linkly</a>
               </button>
             </div>
             <div class="flex items-center justify-center">
@@ -479,9 +483,9 @@
                 connect their audience to their world.
               </p>
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-primary-foreground text-base font-bold tracking-wide hover:opacity-90 transition-opacity bg-primary-light dark:bg-primary-dark"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary-light dark:bg-primary-dark text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity"
               >
-                <a href="signup.html"> <span class="truncate">Get Started for Free</span></a>
+                <a href="signup.html">Get Started for Free</a>
               </button>
             </div>
           </div>
